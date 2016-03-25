@@ -1,6 +1,8 @@
 /**
   * Created by wen on 3/25/16.
   */
+package foo
+
 import java.util.concurrent.TimeUnit
 
 import scala.concurrent.Await

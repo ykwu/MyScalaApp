@@ -1,18 +1,26 @@
-import org.apache.spark.{SparkConf, SparkContext}
-import org.mongodb.scala._
-import Helpers._
 /**
   * Created by wen on 3/25/16.
   */
+
+package foo
+
+import org.apache.spark.{SparkConf, SparkContext}
+import org.mongodb.scala._
+import Helpers._
+import breeze.linalg.DenseMatrix
+
 object MyApp {
     def main(args: Array[String]): Unit = {
 
         // MongoDB read and write
-        MongoTest()
+        //MongoTest()
 
         // use the command line to generate a jar file by typing "sbt package"
         // remember to comment out MongoTest
-        SparkTest()
+        //SparkTest()
+
+        // Spark matrix operations using Breeze
+        SparkMatrixTest()
     }
 
     def MongoTest(): Unit = {
@@ -64,5 +72,14 @@ object MyApp {
         val numAs = logData.filter(line => line.contains("a")).count()
         val numBs = logData.filter(line => line.contains("b")).count()
         println("Lines with a: %s, Lines with b: %s".format(numAs, numBs))
+    }
+
+    def SparkMatrixTest(): Unit = {
+        val n = 1000
+
+        val a: DenseMatrix[Double] = DenseMatrix.rand(2, n)
+        val b: DenseMatrix[Double] = DenseMatrix.rand(n, 3)
+        val c = a * b
+        println(s"Dot product of a and b is $c")
     }
 }
