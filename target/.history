@@ -1,0 +1,59 @@
+sbt compile
+compile
+run
+compile
+run
+compile
+run
+exit
+compile
+run
+data1
+compile
+run
+compile
+run
+compile
+run
+compile
+run
+compile
+run
+compile
+exit
+compile
+run
+compile
+run
+compile
+run
+compile
+run
+compile
+run
+exit
+run
+last run
+exit
+run
+last run
+run
+exit
+run
+sbt run
+run
+exit
+last compile:run
+run
+exit
+run
+exit
+run
+exit
+run
+exit
+run
+invDF.keys
+run
+exit
+run
